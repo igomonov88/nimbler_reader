@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package nimbler;
+
+service Reader {
+  rpc HealthCheck(HealthCheckRequest) returns (HealthCheckResponse) {}
+}
+
+message HealthCheckRequest {
+}
+
+message HealthCheckResponse {
+  string version = 1;
+}
