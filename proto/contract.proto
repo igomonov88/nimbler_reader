@@ -2,8 +2,14 @@ syntax = "proto3";
 
 package nimbler;
 
+import "google/protobuf/timestamp.proto";
+
 service Reader {
   rpc HealthCheck(HealthCheckRequest) returns (HealthCheckResponse) {}
+  rpc GetOriginalURL(GetOriginalUrlRequest) returns (GetOriginalUrlResponse) {}
+  rpc DoesCustomAliasExist(DoesCustomAliasExistRequest) returns (DoesCustomAliasExistResponse) {}
+  rpc GetAllExpiredUrlKeys(GetAllExpiredUrlKeysRequest) returns (GetAllExpiredUrlKeysResponse) {}
+  rpc GetUserInfo(GetUserInfoRequest) returns (GetUserInfoResponse) {}
 }
 
 message HealthCheckRequest {
@@ -11,4 +17,38 @@ message HealthCheckRequest {
 
 message HealthCheckResponse {
   string version = 1;
+}
+
+message GetUserInfoRequest {
+  string userID = 1;
+}
+
+message GetUserInfoResponse {
+  string name = 1;
+  string email = 2;
+}
+
+message GetOriginalUrlRequest {
+  string urlHash = 1;
+}
+
+message GetOriginalUrlResponse {
+  string originalUrl = 1;
+}
+
+message DoesCustomAliasExistRequest {
+  string customAlias = 1;
+}
+
+message DoesCustomAliasExistResponse {
+  bool exist = 1;
+}
+
+message GetAllExpiredUrlKeysRequest {
+  google.protobuf.Timestamp expirationDate = 1;
+  int32 limit = 2;
+}
+
+message GetAllExpiredUrlKeysResponse {
+  repeated string urlKeys = 1;
 }

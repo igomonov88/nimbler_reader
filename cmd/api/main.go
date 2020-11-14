@@ -16,10 +16,10 @@ import (
 	"go.opencensus.io/trace"
 	"google.golang.org/grpc"
 
-	"reader/cmd/api/internal/handlers"
-	"reader/config"
-	"reader/internal/database"
-	contract "reader/proto"
+	"github.com/igomonov88/nimbler_reader/cmd/api/internal/handlers"
+	"github.com/igomonov88/nimbler_reader/config"
+	"github.com/igomonov88/nimbler_reader/internal/platform/database"
+	contract "github.com/igomonov88/nimbler_reader/proto"
 )
 
 /*

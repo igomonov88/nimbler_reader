@@ -9,6 +9,7 @@ package nimbler
 import (
 	context "context"
 	proto "github.com/golang/protobuf/proto"
+	timestamp "github.com/golang/protobuf/ptypes/timestamp"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -114,23 +115,472 @@ func (x *HealthCheckResponse) GetVersion() string {
 	return ""
 }
 
+type GetUserInfoRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	UserID string `protobuf:"bytes,1,opt,name=userID,proto3" json:"userID,omitempty"`
+}
+
+func (x *GetUserInfoRequest) Reset() {
+	*x = GetUserInfoRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_nimbler_reader_proto_contract_proto_msgTypes[2]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetUserInfoRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetUserInfoRequest) ProtoMessage() {}
+
+func (x *GetUserInfoRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_nimbler_reader_proto_contract_proto_msgTypes[2]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetUserInfoRequest.ProtoReflect.Descriptor instead.
+func (*GetUserInfoRequest) Descriptor() ([]byte, []int) {
+	return file_nimbler_reader_proto_contract_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *GetUserInfoRequest) GetUserID() string {
+	if x != nil {
+		return x.UserID
+	}
+	return ""
+}
+
+type GetUserInfoResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Name  string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
+	Email string `protobuf:"bytes,2,opt,name=email,proto3" json:"email,omitempty"`
+}
+
+func (x *GetUserInfoResponse) Reset() {
+	*x = GetUserInfoResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_nimbler_reader_proto_contract_proto_msgTypes[3]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetUserInfoResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetUserInfoResponse) ProtoMessage() {}
+
+func (x *GetUserInfoResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_nimbler_reader_proto_contract_proto_msgTypes[3]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetUserInfoResponse.ProtoReflect.Descriptor instead.
+func (*GetUserInfoResponse) Descriptor() ([]byte, []int) {
+	return file_nimbler_reader_proto_contract_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *GetUserInfoResponse) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *GetUserInfoResponse) GetEmail() string {
+	if x != nil {
+		return x.Email
+	}
+	return ""
+}
+
+type GetOriginalUrlRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	UrlHash string `protobuf:"bytes,1,opt,name=urlHash,proto3" json:"urlHash,omitempty"`
+}
+
+func (x *GetOriginalUrlRequest) Reset() {
+	*x = GetOriginalUrlRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_nimbler_reader_proto_contract_proto_msgTypes[4]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetOriginalUrlRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetOriginalUrlRequest) ProtoMessage() {}
+
+func (x *GetOriginalUrlRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_nimbler_reader_proto_contract_proto_msgTypes[4]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetOriginalUrlRequest.ProtoReflect.Descriptor instead.
+func (*GetOriginalUrlRequest) Descriptor() ([]byte, []int) {
+	return file_nimbler_reader_proto_contract_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *GetOriginalUrlRequest) GetUrlHash() string {
+	if x != nil {
+		return x.UrlHash
+	}
+	return ""
+}
+
+type GetOriginalUrlResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	OriginalUrl string `protobuf:"bytes,1,opt,name=originalUrl,proto3" json:"originalUrl,omitempty"`
+}
+
+func (x *GetOriginalUrlResponse) Reset() {
+	*x = GetOriginalUrlResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_nimbler_reader_proto_contract_proto_msgTypes[5]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetOriginalUrlResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetOriginalUrlResponse) ProtoMessage() {}
+
+func (x *GetOriginalUrlResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_nimbler_reader_proto_contract_proto_msgTypes[5]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetOriginalUrlResponse.ProtoReflect.Descriptor instead.
+func (*GetOriginalUrlResponse) Descriptor() ([]byte, []int) {
+	return file_nimbler_reader_proto_contract_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *GetOriginalUrlResponse) GetOriginalUrl() string {
+	if x != nil {
+		return x.OriginalUrl
+	}
+	return ""
+}
+
+type DoesCustomAliasExistRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	CustomAlias string `protobuf:"bytes,1,opt,name=customAlias,proto3" json:"customAlias,omitempty"`
+}
+
+func (x *DoesCustomAliasExistRequest) Reset() {
+	*x = DoesCustomAliasExistRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_nimbler_reader_proto_contract_proto_msgTypes[6]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DoesCustomAliasExistRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DoesCustomAliasExistRequest) ProtoMessage() {}
+
+func (x *DoesCustomAliasExistRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_nimbler_reader_proto_contract_proto_msgTypes[6]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DoesCustomAliasExistRequest.ProtoReflect.Descriptor instead.
+func (*DoesCustomAliasExistRequest) Descriptor() ([]byte, []int) {
+	return file_nimbler_reader_proto_contract_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *DoesCustomAliasExistRequest) GetCustomAlias() string {
+	if x != nil {
+		return x.CustomAlias
+	}
+	return ""
+}
+
+type DoesCustomAliasExistResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Exist bool `protobuf:"varint,1,opt,name=exist,proto3" json:"exist,omitempty"`
+}
+
+func (x *DoesCustomAliasExistResponse) Reset() {
+	*x = DoesCustomAliasExistResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_nimbler_reader_proto_contract_proto_msgTypes[7]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DoesCustomAliasExistResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DoesCustomAliasExistResponse) ProtoMessage() {}
+
+func (x *DoesCustomAliasExistResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_nimbler_reader_proto_contract_proto_msgTypes[7]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DoesCustomAliasExistResponse.ProtoReflect.Descriptor instead.
+func (*DoesCustomAliasExistResponse) Descriptor() ([]byte, []int) {
+	return file_nimbler_reader_proto_contract_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *DoesCustomAliasExistResponse) GetExist() bool {
+	if x != nil {
+		return x.Exist
+	}
+	return false
+}
+
+type GetAllExpiredUrlKeysRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	ExpirationDate *timestamp.Timestamp `protobuf:"bytes,1,opt,name=expirationDate,proto3" json:"expirationDate,omitempty"`
+	Limit          int32                `protobuf:"varint,2,opt,name=limit,proto3" json:"limit,omitempty"`
+}
+
+func (x *GetAllExpiredUrlKeysRequest) Reset() {
+	*x = GetAllExpiredUrlKeysRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_nimbler_reader_proto_contract_proto_msgTypes[8]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetAllExpiredUrlKeysRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetAllExpiredUrlKeysRequest) ProtoMessage() {}
+
+func (x *GetAllExpiredUrlKeysRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_nimbler_reader_proto_contract_proto_msgTypes[8]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetAllExpiredUrlKeysRequest.ProtoReflect.Descriptor instead.
+func (*GetAllExpiredUrlKeysRequest) Descriptor() ([]byte, []int) {
+	return file_nimbler_reader_proto_contract_proto_rawDescGZIP(), []int{8}
+}
+
+func (x *GetAllExpiredUrlKeysRequest) GetExpirationDate() *timestamp.Timestamp {
+	if x != nil {
+		return x.ExpirationDate
+	}
+	return nil
+}
+
+func (x *GetAllExpiredUrlKeysRequest) GetLimit() int32 {
+	if x != nil {
+		return x.Limit
+	}
+	return 0
+}
+
+type GetAllExpiredUrlKeysResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	UrlKeys []string `protobuf:"bytes,1,rep,name=urlKeys,proto3" json:"urlKeys,omitempty"`
+}
+
+func (x *GetAllExpiredUrlKeysResponse) Reset() {
+	*x = GetAllExpiredUrlKeysResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_nimbler_reader_proto_contract_proto_msgTypes[9]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetAllExpiredUrlKeysResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetAllExpiredUrlKeysResponse) ProtoMessage() {}
+
+func (x *GetAllExpiredUrlKeysResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_nimbler_reader_proto_contract_proto_msgTypes[9]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetAllExpiredUrlKeysResponse.ProtoReflect.Descriptor instead.
+func (*GetAllExpiredUrlKeysResponse) Descriptor() ([]byte, []int) {
+	return file_nimbler_reader_proto_contract_proto_rawDescGZIP(), []int{9}
+}
+
+func (x *GetAllExpiredUrlKeysResponse) GetUrlKeys() []string {
+	if x != nil {
+		return x.UrlKeys
+	}
+	return nil
+}
+
 var File_nimbler_reader_proto_contract_proto protoreflect.FileDescriptor
 
 var file_nimbler_reader_proto_contract_proto_rawDesc = []byte{
 	0x0a, 0x23, 0x6e, 0x69, 0x6d, 0x62, 0x6c, 0x65, 0x72, 0x5f, 0x72, 0x65, 0x61, 0x64, 0x65, 0x72,
 	0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x63, 0x6f, 0x6e, 0x74, 0x72, 0x61, 0x63, 0x74, 0x2e,
-	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x07, 0x6e, 0x69, 0x6d, 0x62, 0x6c, 0x65, 0x72, 0x22, 0x14,
-	0x0a, 0x12, 0x48, 0x65, 0x61, 0x6c, 0x74, 0x68, 0x43, 0x68, 0x65, 0x63, 0x6b, 0x52, 0x65, 0x71,
-	0x75, 0x65, 0x73, 0x74, 0x22, 0x2f, 0x0a, 0x13, 0x48, 0x65, 0x61, 0x6c, 0x74, 0x68, 0x43, 0x68,
-	0x65, 0x63, 0x6b, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x18, 0x0a, 0x07, 0x76,
-	0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x76, 0x65,
-	0x72, 0x73, 0x69, 0x6f, 0x6e, 0x32, 0x54, 0x0a, 0x06, 0x52, 0x65, 0x61, 0x64, 0x65, 0x72, 0x12,
-	0x4a, 0x0a, 0x0b, 0x48, 0x65, 0x61, 0x6c, 0x74, 0x68, 0x43, 0x68, 0x65, 0x63, 0x6b, 0x12, 0x1b,
-	0x2e, 0x6e, 0x69, 0x6d, 0x62, 0x6c, 0x65, 0x72, 0x2e, 0x48, 0x65, 0x61, 0x6c, 0x74, 0x68, 0x43,
-	0x68, 0x65, 0x63, 0x6b, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1c, 0x2e, 0x6e, 0x69,
-	0x6d, 0x62, 0x6c, 0x65, 0x72, 0x2e, 0x48, 0x65, 0x61, 0x6c, 0x74, 0x68, 0x43, 0x68, 0x65, 0x63,
-	0x6b, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x62, 0x06, 0x70, 0x72, 0x6f,
-	0x74, 0x6f, 0x33,
+	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x07, 0x6e, 0x69, 0x6d, 0x62, 0x6c, 0x65, 0x72, 0x1a, 0x1f,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2f,
+	0x74, 0x69, 0x6d, 0x65, 0x73, 0x74, 0x61, 0x6d, 0x70, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22,
+	0x14, 0x0a, 0x12, 0x48, 0x65, 0x61, 0x6c, 0x74, 0x68, 0x43, 0x68, 0x65, 0x63, 0x6b, 0x52, 0x65,
+	0x71, 0x75, 0x65, 0x73, 0x74, 0x22, 0x2f, 0x0a, 0x13, 0x48, 0x65, 0x61, 0x6c, 0x74, 0x68, 0x43,
+	0x68, 0x65, 0x63, 0x6b, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x18, 0x0a, 0x07,
+	0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x76,
+	0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x22, 0x2c, 0x0a, 0x12, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65,
+	0x72, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x16, 0x0a, 0x06,
+	0x75, 0x73, 0x65, 0x72, 0x49, 0x44, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x75, 0x73,
+	0x65, 0x72, 0x49, 0x44, 0x22, 0x3f, 0x0a, 0x13, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x49,
+	0x6e, 0x66, 0x6f, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x6e,
+	0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12,
+	0x14, 0x0a, 0x05, 0x65, 0x6d, 0x61, 0x69, 0x6c, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05,
+	0x65, 0x6d, 0x61, 0x69, 0x6c, 0x22, 0x31, 0x0a, 0x15, 0x47, 0x65, 0x74, 0x4f, 0x72, 0x69, 0x67,
+	0x69, 0x6e, 0x61, 0x6c, 0x55, 0x72, 0x6c, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x18,
+	0x0a, 0x07, 0x75, 0x72, 0x6c, 0x48, 0x61, 0x73, 0x68, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x07, 0x75, 0x72, 0x6c, 0x48, 0x61, 0x73, 0x68, 0x22, 0x3a, 0x0a, 0x16, 0x47, 0x65, 0x74, 0x4f,
+	0x72, 0x69, 0x67, 0x69, 0x6e, 0x61, 0x6c, 0x55, 0x72, 0x6c, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x73, 0x65, 0x12, 0x20, 0x0a, 0x0b, 0x6f, 0x72, 0x69, 0x67, 0x69, 0x6e, 0x61, 0x6c, 0x55, 0x72,
+	0x6c, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x6f, 0x72, 0x69, 0x67, 0x69, 0x6e, 0x61,
+	0x6c, 0x55, 0x72, 0x6c, 0x22, 0x3f, 0x0a, 0x1b, 0x44, 0x6f, 0x65, 0x73, 0x43, 0x75, 0x73, 0x74,
+	0x6f, 0x6d, 0x41, 0x6c, 0x69, 0x61, 0x73, 0x45, 0x78, 0x69, 0x73, 0x74, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x12, 0x20, 0x0a, 0x0b, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x41, 0x6c, 0x69,
+	0x61, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d,
+	0x41, 0x6c, 0x69, 0x61, 0x73, 0x22, 0x34, 0x0a, 0x1c, 0x44, 0x6f, 0x65, 0x73, 0x43, 0x75, 0x73,
+	0x74, 0x6f, 0x6d, 0x41, 0x6c, 0x69, 0x61, 0x73, 0x45, 0x78, 0x69, 0x73, 0x74, 0x52, 0x65, 0x73,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x65, 0x78, 0x69, 0x73, 0x74, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x08, 0x52, 0x05, 0x65, 0x78, 0x69, 0x73, 0x74, 0x22, 0x77, 0x0a, 0x1b, 0x47,
+	0x65, 0x74, 0x41, 0x6c, 0x6c, 0x45, 0x78, 0x70, 0x69, 0x72, 0x65, 0x64, 0x55, 0x72, 0x6c, 0x4b,
+	0x65, 0x79, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x42, 0x0a, 0x0e, 0x65, 0x78,
+	0x70, 0x69, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x44, 0x61, 0x74, 0x65, 0x18, 0x01, 0x20, 0x01,
+	0x28, 0x0b, 0x32, 0x1a, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74,
+	0x6f, 0x62, 0x75, 0x66, 0x2e, 0x54, 0x69, 0x6d, 0x65, 0x73, 0x74, 0x61, 0x6d, 0x70, 0x52, 0x0e,
+	0x65, 0x78, 0x70, 0x69, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x44, 0x61, 0x74, 0x65, 0x12, 0x14,
+	0x0a, 0x05, 0x6c, 0x69, 0x6d, 0x69, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x05, 0x52, 0x05, 0x6c,
+	0x69, 0x6d, 0x69, 0x74, 0x22, 0x38, 0x0a, 0x1c, 0x47, 0x65, 0x74, 0x41, 0x6c, 0x6c, 0x45, 0x78,
+	0x70, 0x69, 0x72, 0x65, 0x64, 0x55, 0x72, 0x6c, 0x4b, 0x65, 0x79, 0x73, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x12, 0x18, 0x0a, 0x07, 0x75, 0x72, 0x6c, 0x4b, 0x65, 0x79, 0x73, 0x18,
+	0x01, 0x20, 0x03, 0x28, 0x09, 0x52, 0x07, 0x75, 0x72, 0x6c, 0x4b, 0x65, 0x79, 0x73, 0x32, 0xc3,
+	0x03, 0x0a, 0x06, 0x52, 0x65, 0x61, 0x64, 0x65, 0x72, 0x12, 0x4a, 0x0a, 0x0b, 0x48, 0x65, 0x61,
+	0x6c, 0x74, 0x68, 0x43, 0x68, 0x65, 0x63, 0x6b, 0x12, 0x1b, 0x2e, 0x6e, 0x69, 0x6d, 0x62, 0x6c,
+	0x65, 0x72, 0x2e, 0x48, 0x65, 0x61, 0x6c, 0x74, 0x68, 0x43, 0x68, 0x65, 0x63, 0x6b, 0x52, 0x65,
+	0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1c, 0x2e, 0x6e, 0x69, 0x6d, 0x62, 0x6c, 0x65, 0x72, 0x2e,
+	0x48, 0x65, 0x61, 0x6c, 0x74, 0x68, 0x43, 0x68, 0x65, 0x63, 0x6b, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x53, 0x0a, 0x0e, 0x47, 0x65, 0x74, 0x4f, 0x72, 0x69, 0x67,
+	0x69, 0x6e, 0x61, 0x6c, 0x55, 0x52, 0x4c, 0x12, 0x1e, 0x2e, 0x6e, 0x69, 0x6d, 0x62, 0x6c, 0x65,
+	0x72, 0x2e, 0x47, 0x65, 0x74, 0x4f, 0x72, 0x69, 0x67, 0x69, 0x6e, 0x61, 0x6c, 0x55, 0x72, 0x6c,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1f, 0x2e, 0x6e, 0x69, 0x6d, 0x62, 0x6c, 0x65,
+	0x72, 0x2e, 0x47, 0x65, 0x74, 0x4f, 0x72, 0x69, 0x67, 0x69, 0x6e, 0x61, 0x6c, 0x55, 0x72, 0x6c,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x65, 0x0a, 0x14, 0x44, 0x6f,
+	0x65, 0x73, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x41, 0x6c, 0x69, 0x61, 0x73, 0x45, 0x78, 0x69,
+	0x73, 0x74, 0x12, 0x24, 0x2e, 0x6e, 0x69, 0x6d, 0x62, 0x6c, 0x65, 0x72, 0x2e, 0x44, 0x6f, 0x65,
+	0x73, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x41, 0x6c, 0x69, 0x61, 0x73, 0x45, 0x78, 0x69, 0x73,
+	0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x25, 0x2e, 0x6e, 0x69, 0x6d, 0x62, 0x6c,
+	0x65, 0x72, 0x2e, 0x44, 0x6f, 0x65, 0x73, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x41, 0x6c, 0x69,
+	0x61, 0x73, 0x45, 0x78, 0x69, 0x73, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
+	0x00, 0x12, 0x65, 0x0a, 0x14, 0x47, 0x65, 0x74, 0x41, 0x6c, 0x6c, 0x45, 0x78, 0x70, 0x69, 0x72,
+	0x65, 0x64, 0x55, 0x72, 0x6c, 0x4b, 0x65, 0x79, 0x73, 0x12, 0x24, 0x2e, 0x6e, 0x69, 0x6d, 0x62,
+	0x6c, 0x65, 0x72, 0x2e, 0x47, 0x65, 0x74, 0x41, 0x6c, 0x6c, 0x45, 0x78, 0x70, 0x69, 0x72, 0x65,
+	0x64, 0x55, 0x72, 0x6c, 0x4b, 0x65, 0x79, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x25, 0x2e, 0x6e, 0x69, 0x6d, 0x62, 0x6c, 0x65, 0x72, 0x2e, 0x47, 0x65, 0x74, 0x41, 0x6c, 0x6c,
+	0x45, 0x78, 0x70, 0x69, 0x72, 0x65, 0x64, 0x55, 0x72, 0x6c, 0x4b, 0x65, 0x79, 0x73, 0x52, 0x65,
+	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x4a, 0x0a, 0x0b, 0x47, 0x65, 0x74, 0x55,
+	0x73, 0x65, 0x72, 0x49, 0x6e, 0x66, 0x6f, 0x12, 0x1b, 0x2e, 0x6e, 0x69, 0x6d, 0x62, 0x6c, 0x65,
+	0x72, 0x2e, 0x47, 0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x1a, 0x1c, 0x2e, 0x6e, 0x69, 0x6d, 0x62, 0x6c, 0x65, 0x72, 0x2e, 0x47,
+	0x65, 0x74, 0x55, 0x73, 0x65, 0x72, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x73, 0x65, 0x22, 0x00, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -145,19 +595,37 @@ func file_nimbler_reader_proto_contract_proto_rawDescGZIP() []byte {
 	return file_nimbler_reader_proto_contract_proto_rawDescData
 }
 
-var file_nimbler_reader_proto_contract_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_nimbler_reader_proto_contract_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
 var file_nimbler_reader_proto_contract_proto_goTypes = []interface{}{
-	(*HealthCheckRequest)(nil),  // 0: nimbler.HealthCheckRequest
-	(*HealthCheckResponse)(nil), // 1: nimbler.HealthCheckResponse
+	(*HealthCheckRequest)(nil),           // 0: nimbler.HealthCheckRequest
+	(*HealthCheckResponse)(nil),          // 1: nimbler.HealthCheckResponse
+	(*GetUserInfoRequest)(nil),           // 2: nimbler.GetUserInfoRequest
+	(*GetUserInfoResponse)(nil),          // 3: nimbler.GetUserInfoResponse
+	(*GetOriginalUrlRequest)(nil),        // 4: nimbler.GetOriginalUrlRequest
+	(*GetOriginalUrlResponse)(nil),       // 5: nimbler.GetOriginalUrlResponse
+	(*DoesCustomAliasExistRequest)(nil),  // 6: nimbler.DoesCustomAliasExistRequest
+	(*DoesCustomAliasExistResponse)(nil), // 7: nimbler.DoesCustomAliasExistResponse
+	(*GetAllExpiredUrlKeysRequest)(nil),  // 8: nimbler.GetAllExpiredUrlKeysRequest
+	(*GetAllExpiredUrlKeysResponse)(nil), // 9: nimbler.GetAllExpiredUrlKeysResponse
+	(*timestamp.Timestamp)(nil),          // 10: google.protobuf.Timestamp
 }
 var file_nimbler_reader_proto_contract_proto_depIdxs = []int32{
-	0, // 0: nimbler.Reader.HealthCheck:input_type -> nimbler.HealthCheckRequest
-	1, // 1: nimbler.Reader.HealthCheck:output_type -> nimbler.HealthCheckResponse
-	1, // [1:2] is the sub-list for method output_type
-	0, // [0:1] is the sub-list for method input_type
-	0, // [0:0] is the sub-list for extension type_name
-	0, // [0:0] is the sub-list for extension extendee
-	0, // [0:0] is the sub-list for field type_name
+	10, // 0: nimbler.GetAllExpiredUrlKeysRequest.expirationDate:type_name -> google.protobuf.Timestamp
+	0,  // 1: nimbler.Reader.HealthCheck:input_type -> nimbler.HealthCheckRequest
+	4,  // 2: nimbler.Reader.GetOriginalURL:input_type -> nimbler.GetOriginalUrlRequest
+	6,  // 3: nimbler.Reader.DoesCustomAliasExist:input_type -> nimbler.DoesCustomAliasExistRequest
+	8,  // 4: nimbler.Reader.GetAllExpiredUrlKeys:input_type -> nimbler.GetAllExpiredUrlKeysRequest
+	2,  // 5: nimbler.Reader.GetUserInfo:input_type -> nimbler.GetUserInfoRequest
+	1,  // 6: nimbler.Reader.HealthCheck:output_type -> nimbler.HealthCheckResponse
+	5,  // 7: nimbler.Reader.GetOriginalURL:output_type -> nimbler.GetOriginalUrlResponse
+	7,  // 8: nimbler.Reader.DoesCustomAliasExist:output_type -> nimbler.DoesCustomAliasExistResponse
+	9,  // 9: nimbler.Reader.GetAllExpiredUrlKeys:output_type -> nimbler.GetAllExpiredUrlKeysResponse
+	3,  // 10: nimbler.Reader.GetUserInfo:output_type -> nimbler.GetUserInfoResponse
+	6,  // [6:11] is the sub-list for method output_type
+	1,  // [1:6] is the sub-list for method input_type
+	1,  // [1:1] is the sub-list for extension type_name
+	1,  // [1:1] is the sub-list for extension extendee
+	0,  // [0:1] is the sub-list for field type_name
 }
 
 func init() { file_nimbler_reader_proto_contract_proto_init() }
@@ -190,6 +658,102 @@ func file_nimbler_reader_proto_contract_proto_init() {
 				return nil
 			}
 		}
+		file_nimbler_reader_proto_contract_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetUserInfoRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_nimbler_reader_proto_contract_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetUserInfoResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_nimbler_reader_proto_contract_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetOriginalUrlRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_nimbler_reader_proto_contract_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetOriginalUrlResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_nimbler_reader_proto_contract_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DoesCustomAliasExistRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_nimbler_reader_proto_contract_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DoesCustomAliasExistResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_nimbler_reader_proto_contract_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetAllExpiredUrlKeysRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_nimbler_reader_proto_contract_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*GetAllExpiredUrlKeysResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -197,7 +761,7 @@ func file_nimbler_reader_proto_contract_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_nimbler_reader_proto_contract_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   2,
+			NumMessages:   10,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
@@ -224,6 +788,10 @@ const _ = grpc.SupportPackageIsVersion6
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type ReaderClient interface {
 	HealthCheck(ctx context.Context, in *HealthCheckRequest, opts ...grpc.CallOption) (*HealthCheckResponse, error)
+	GetOriginalURL(ctx context.Context, in *GetOriginalUrlRequest, opts ...grpc.CallOption) (*GetOriginalUrlResponse, error)
+	DoesCustomAliasExist(ctx context.Context, in *DoesCustomAliasExistRequest, opts ...grpc.CallOption) (*DoesCustomAliasExistResponse, error)
+	GetAllExpiredUrlKeys(ctx context.Context, in *GetAllExpiredUrlKeysRequest, opts ...grpc.CallOption) (*GetAllExpiredUrlKeysResponse, error)
+	GetUserInfo(ctx context.Context, in *GetUserInfoRequest, opts ...grpc.CallOption) (*GetUserInfoResponse, error)
 }
 
 type readerClient struct {
@@ -243,9 +811,49 @@ func (c *readerClient) HealthCheck(ctx context.Context, in *HealthCheckRequest, 
 	return out, nil
 }
 
+func (c *readerClient) GetOriginalURL(ctx context.Context, in *GetOriginalUrlRequest, opts ...grpc.CallOption) (*GetOriginalUrlResponse, error) {
+	out := new(GetOriginalUrlResponse)
+	err := c.cc.Invoke(ctx, "/nimbler.Reader/GetOriginalURL", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *readerClient) DoesCustomAliasExist(ctx context.Context, in *DoesCustomAliasExistRequest, opts ...grpc.CallOption) (*DoesCustomAliasExistResponse, error) {
+	out := new(DoesCustomAliasExistResponse)
+	err := c.cc.Invoke(ctx, "/nimbler.Reader/DoesCustomAliasExist", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *readerClient) GetAllExpiredUrlKeys(ctx context.Context, in *GetAllExpiredUrlKeysRequest, opts ...grpc.CallOption) (*GetAllExpiredUrlKeysResponse, error) {
+	out := new(GetAllExpiredUrlKeysResponse)
+	err := c.cc.Invoke(ctx, "/nimbler.Reader/GetAllExpiredUrlKeys", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *readerClient) GetUserInfo(ctx context.Context, in *GetUserInfoRequest, opts ...grpc.CallOption) (*GetUserInfoResponse, error) {
+	out := new(GetUserInfoResponse)
+	err := c.cc.Invoke(ctx, "/nimbler.Reader/GetUserInfo", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ReaderServer is the server API for Reader service.
 type ReaderServer interface {
 	HealthCheck(context.Context, *HealthCheckRequest) (*HealthCheckResponse, error)
+	GetOriginalURL(context.Context, *GetOriginalUrlRequest) (*GetOriginalUrlResponse, error)
+	DoesCustomAliasExist(context.Context, *DoesCustomAliasExistRequest) (*DoesCustomAliasExistResponse, error)
+	GetAllExpiredUrlKeys(context.Context, *GetAllExpiredUrlKeysRequest) (*GetAllExpiredUrlKeysResponse, error)
+	GetUserInfo(context.Context, *GetUserInfoRequest) (*GetUserInfoResponse, error)
 }
 
 // UnimplementedReaderServer can be embedded to have forward compatible implementations.
@@ -254,6 +862,18 @@ type UnimplementedReaderServer struct {
 
 func (*UnimplementedReaderServer) HealthCheck(context.Context, *HealthCheckRequest) (*HealthCheckResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method HealthCheck not implemented")
+}
+func (*UnimplementedReaderServer) GetOriginalURL(context.Context, *GetOriginalUrlRequest) (*GetOriginalUrlResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetOriginalURL not implemented")
+}
+func (*UnimplementedReaderServer) DoesCustomAliasExist(context.Context, *DoesCustomAliasExistRequest) (*DoesCustomAliasExistResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DoesCustomAliasExist not implemented")
+}
+func (*UnimplementedReaderServer) GetAllExpiredUrlKeys(context.Context, *GetAllExpiredUrlKeysRequest) (*GetAllExpiredUrlKeysResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAllExpiredUrlKeys not implemented")
+}
+func (*UnimplementedReaderServer) GetUserInfo(context.Context, *GetUserInfoRequest) (*GetUserInfoResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetUserInfo not implemented")
 }
 
 func RegisterReaderServer(s *grpc.Server, srv ReaderServer) {
@@ -278,6 +898,78 @@ func _Reader_HealthCheck_Handler(srv interface{}, ctx context.Context, dec func(
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Reader_GetOriginalURL_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetOriginalUrlRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ReaderServer).GetOriginalURL(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/nimbler.Reader/GetOriginalURL",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ReaderServer).GetOriginalURL(ctx, req.(*GetOriginalUrlRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Reader_DoesCustomAliasExist_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DoesCustomAliasExistRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ReaderServer).DoesCustomAliasExist(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/nimbler.Reader/DoesCustomAliasExist",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ReaderServer).DoesCustomAliasExist(ctx, req.(*DoesCustomAliasExistRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Reader_GetAllExpiredUrlKeys_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAllExpiredUrlKeysRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ReaderServer).GetAllExpiredUrlKeys(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/nimbler.Reader/GetAllExpiredUrlKeys",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ReaderServer).GetAllExpiredUrlKeys(ctx, req.(*GetAllExpiredUrlKeysRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Reader_GetUserInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetUserInfoRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ReaderServer).GetUserInfo(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/nimbler.Reader/GetUserInfo",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ReaderServer).GetUserInfo(ctx, req.(*GetUserInfoRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _Reader_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "nimbler.Reader",
 	HandlerType: (*ReaderServer)(nil),
@@ -285,6 +977,22 @@ var _Reader_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "HealthCheck",
 			Handler:    _Reader_HealthCheck_Handler,
+		},
+		{
+			MethodName: "GetOriginalURL",
+			Handler:    _Reader_GetOriginalURL_Handler,
+		},
+		{
+			MethodName: "DoesCustomAliasExist",
+			Handler:    _Reader_DoesCustomAliasExist_Handler,
+		},
+		{
+			MethodName: "GetAllExpiredUrlKeys",
+			Handler:    _Reader_GetAllExpiredUrlKeys_Handler,
+		},
+		{
+			MethodName: "GetUserInfo",
+			Handler:    _Reader_GetUserInfo_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

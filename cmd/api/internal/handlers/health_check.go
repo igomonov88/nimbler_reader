@@ -7,8 +7,8 @@ import (
 	"go.opencensus.io/trace"
 	"google.golang.org/grpc/status"
 
-	"reader/internal/database"
-	pb "reader/proto"
+	"github.com/igomonov88/nimbler_reader/internal/platform/database"
+	pb "github.com/igomonov88/nimbler_reader/proto"
 
 )
 

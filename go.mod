@@ -1,10 +1,14 @@
-module reader
+module github.com/igomonov88/nimbler_reader
 
 go 1.14
 
 require (
 	contrib.go.opencensus.io/exporter/zipkin v0.1.2
+	github.com/dimiro1/darwin v0.0.0-20191008194338-370f81775d3b
 	github.com/golang/protobuf v1.4.2
+	github.com/google/go-cmp v0.5.2
+	github.com/google/uuid v1.1.2
+	github.com/igomonov88/nimbler_writer v1.0.7
 	github.com/jmoiron/sqlx v1.2.0
 	github.com/lib/pq v1.8.0
 	github.com/openzipkin/zipkin-go v0.2.5
